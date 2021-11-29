@@ -2,11 +2,15 @@
 SPSS
 #include<accounting/personnel>. [Descriptive variable statistics](https://user-images.githubusercontent.com/95216143/143929169-9bdfeb58-401d-4ce6-b619-86f003c4bdb0.png)
 
+#include<Chart> ![DVM](https://user-images.githubusercontent.com/95216143/143930879-c7101ff4-346a-4d6e-bed5-84057cf6f998.png)
+
+
 #include<![chart](https://user-images.githubusercontent.com/95216143/143929130-c5771d83-22f2-45e6-80ba-c07b6ae6e87b.png)
 
 #include<corelation/matrix>  ![matrix](https://user-images.githubusercontent.com/95216143/143929542-33b15a6a-810c-4550-9935-394d8bf2d222.png)
 
 #include<regression/matrix>  ![regression](https://user-images.githubusercontent.com/95216143/143929617-591cc954-4028-42e6-9703-4d7695217d9e.png)
+
 
 Include<formulaused>.  ![formula](https://user-images.githubusercontent.com/95216143/143929673-39e46dc6-16fb-4593-909a-ab6078a0960c.png)
   /* driver name */
