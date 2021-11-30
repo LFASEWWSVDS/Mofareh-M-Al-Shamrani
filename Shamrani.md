@@ -1,4 +1,4 @@
-# Mofareh-M-Al-Shamrani
+# Mohammed Mofareh M Al Shamrani
 SPSS
 #include<accounting/personnel>. [Descriptive variable statistics](https://user-images.githubusercontent.com/95216143/143929169-9bdfeb58-401d-4ce6-b619-86f003c4bdb0.png)
 
