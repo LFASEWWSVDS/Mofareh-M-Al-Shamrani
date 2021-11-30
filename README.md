@@ -1,2 +1,2 @@
-# Mofareh-M-Al-Shamrani
+# Mofareh M Al Shamrani
 SPSS
