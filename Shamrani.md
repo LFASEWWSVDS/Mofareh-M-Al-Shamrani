@@ -447,5 +447,69 @@ late_initcall(spss_init); /* start after PIL driver */
 MODULE_LICENSE("GPL v2");
 MODULE_DESCRIPTION("Secure Processor Utilities");
 
-  
+  * TURN OFF SCIENTIFIC NOTATION
+
+ SET DIGITGROUPING=No Small=0 Unicode=No OLang=English.
+
+ * OPEN THE DATASET
+
+ GET 
+   FILE='[Zezo.xlsx](https://github.com/LFASEWWSVDS/Mofareh-M-Al-Shamrani/files/7622697/Zezo.xlsx)'. 
+
+ DATASET NAME WINDOW=FRONT.
+ DATASET ACTIVATE.
+
+ *Test the 5 screening criteria with Frequencies.
+
+ FREQUENCIES VARIABLES=NPM, AS, AL, AUI        
+   /FORMAT=NOTABLE
+   /STATISTICS=RANGE MEAN
+   /ORDER=ANALYSIS.
+
+ *Test for non-linearity with scatterplot for �Had Crying Spells� (it has large skewness and Kurtosis scores) against the 24 other items being tested.  
+
+ REGRESSION
+   /MISSING LISTWISE
+   /STATISTICS COEFF OUTS R ANOVA
+   /CRITERIA=PIN(.05) POUT(.10)
+   /NOORIGIN 
+   /DEPENDENT cesd10c
+   /METHOD=ENTER NPM, AS, AL, AUI
+   /PARTIALPLOT ALL.
+
+ * Test for influential cases and multicollinearity 
+
+ REGRESSION
+   /MISSING LISTWISE
+   /STATISTICS ALL
+   /CRITERIA=PIN(.05) POUT(.10)
+   /NOORIGIN
+   /DEPENDENT id 
+   /METHOD=ENTER 
+   /SAVE MAHAL.
+
+
+ * Run 1 factor EFA for the 8 Happy and Sad items of the CESD
+
+ FACTOR VARIABLES=NPM, AS, AL, AUI
+   /MISSING LISTWISE
+   /ANALYSIS NPM, AS, AL, AUI
+   /PRINT INITIAL UNIVARIATE CORRELATION ROTATION REPR
+   /FORMAT SORT BLANK (.30)
+   /PLOT EIGEN
+   /CRITERIA FACTORS(1) ITERATE(25)
+   /EXTRACTION PAF
+   /ROTATION OBLIMIN
+   /METHOD=CORRELATION.
+
+ * CLOSE THE DATASET
+
+ DATASET CLOSE Homework5.
+
+ * Export Output.
+ OUTPUT EXPORT
+   /CONTENTS  EXPORT=ALL  LAYERS=ALL  MODELVIEWS=ALL
+   /PDF  DOCUMENTFILE='[My Thesis.pdf](https://github.com/LFASEWWSVDS/Mofareh-M-Al-Shamrani/files/7622720/My.Thesis.pdf)
+'+
+      EMBEDBOOKMARKS=YES  EMBEDFONTS=YES.
   - Thank you
